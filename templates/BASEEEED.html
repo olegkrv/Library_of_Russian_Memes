@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Проект</title>
+    <style>
+   div.rollover {
+    background: url(static/images/Floppa.jpg); /* Путь к файлу с исходным рисунком  */
+    display: block; /*  Рисунок как блочный элемент */
+    width: 1113px; /* Ширина рисунка */
+    height: 333px; /*  Высота рисунка */
+    auto;/* устанваливаем блок div по центру страницы*/
+   }
+   div.rollover:hover {
+    background: url(static/images/Floppa1.jpg); /* Путь к файлу с заменяемым рисунком  */
+   }
+  </style>
+</head>
+<body bgcolor="black">
+{% if current_user.is_authenticated %}
+
+    <a class="navbar-brand" style="float: right; background: red; border-style: solid;
+    text-decoration: none; color: black; border-radius: 5px; border-color: red; border-width: 1px;
+    font-size: 20px; font-family: century gothic; padding: 10px; margin-top: -10px"
+       href="/logout">Выйти</a>
+{% else %}
+    <a style="float: right; background: yellow; border-style: solid;
+    text-decoration: none; color: black; border-radius: 5px; border-color: yellow; border-width: 1px;
+    font-size: 20px; font-family: century gothic; padding: 10px"
+       class="btn btn-primary " href="/login">
+        Войти
+    </a>
+    <a style="float: right; background: black; border-style: solid;
+        text-decoration: none; color: white; border-radius: 5px; border-color: yellow; border-width: 1px;
+        font-size: 20px; font-family: century gothic; padding: 10px; margin-right: 10px"
+       class="btn btn-primary " href="/register">
+        Зарегистрироваться
+    </a>
+{% endif %}
+<p>
+    <a style="background: white; border-style: solid;
+    text-decoration: none; color: black; border-radius: 5px; border-color: white;
+    border-width: 1px;
+    font-size: 20px; font-family: century gothic; padding: 10px"
+       class="btn btn-primary " href="/classification">
+        Классификация
+    </a>
+
+    {% if current_user.is_authenticated %}
+        <p style="margin-top: 25px"><font face="Century Gothic" color="white">{{ current_user.name }}</font></p>
+    {% endif %}
+    <div class="rollover"> </div>
+    <center><a style="background: black; border-style: solid;
+        text-decoration: none; color: yellow; border-radius: 20px; border-color: white;
+        border-width: 1px;
+        font-size: 40px; font-family: century gothic; padding: 50px; margin-right: 10px"
+           class="btn btn-primary " href="/library">
+           Перейти в библиотеку</a></center>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% extends "BASED BASE.html" %}
+
+{% block content %}
+<h1>
+    <center><font face="Century Gothic" color="white">Добавление мема</font></center>
+</h1>
+
+<form action="#" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <center>
+        <font face="Century Gothic" color="white">
+            {{ form.title.label }}<br>
+            {{ form.title(class="form-control") }}<br>
+            {% for error in form.title.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+            {% endfor %}
+        </font></center>
+    <center><font face="Century Gothic" color="white">
+        {{ form.content.label }}<br>
+        {{ form.content(class="form-control") }}<br>
+        {% for error in form.content.errors %}
+        <p content="alert alert-danger" role="alert" style="height: 188px;">
+            {{ error }}
+        </p>
+        {% endfor %}</font></center>
+    <center>
+        <font face="Century Gothic" color="white">
+            {{ form.typpe.label }}<br>
+            {{ form.typpe(class="form-control") }}<br>
+            {% for error in form.typpe.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+            {% endfor %}
+        </font></center>
+    <center>
+        <font face="Century Gothic" color="white">
+            {{ form.meme_class.label }}<br>
+            {{ form.meme_class(class="form-control") }}<br>
+            {% for error in form.meme_class.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+            {% endfor %}
+        </font></center>
+    <center>{{form.image}}</center>
+    <center><font face="Century Gothic" color="white">
+        <center><font face="Century Gothic" color="white">
+        <p>
+            {{ form.submit(type="submit", class="btn btn-primary") }}</p></font></center>
+        <p>{{message}}</p></font></center>
+</form>
+{% endblock %}

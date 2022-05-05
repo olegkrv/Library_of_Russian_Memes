@@ -1,0 +1,56 @@
+* {color:white;
+font-family: century gothic;
+box-sizing: border-box;}
+
+body {
+background-color: black;
+}
+
+input, textarea {
+max-width:300px;
+}
+
+textarea {
+height: 200px;
+}
+
+.card {
+color: black;
+position: relative;
+display: flex;
+flex-direction: column;
+min-width: 0;
+word-wrap: break-word;
+background-color: black;
+background-clip: border-box;
+border: 1px solid rgba(255, 255, 255,0.8);
+border-radius: 0.25rem;
+margin-top: 20px;
+margin-left: 20px;
+margin-right: 20px;
+height: 330px;
+object-fit: cover;
+}
+
+
+
+
+
+/* Поплавок четыре колонки бок о бок */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Удалите лишние левые и правые поля из-за заполнения столбцов */
+.row {margin: 0 -5px;}
+
+/* Очистить поплавки после столбцов */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+

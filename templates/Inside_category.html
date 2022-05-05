@@ -1,0 +1,38 @@
+{% extends "BASED BASE.html" %}
+
+{% block content %}
+<a style="background: black; border-style: solid;
+        text-decoration: none; color: white; border-radius: 5px; border-color: yellow; border-width: 1px;
+        font-size: 20px; font-family: century gothic; padding: 10px; margin-right: 10px"
+       class="btn btn-primary " href="/library">
+        Назад
+    </a>
+{% for cl in cnm %}
+<h2 style="margin-left: 20px"> {{cl}} </h2>
+{% for i in range(l[cnm.index(cl)]) %}
+<div class="row" style="float: left;">
+    {% for item in memes%}
+    {% if cl[:-1] == item.meme_class[:-1] %}
+    <div class="column">
+            <div class="card" style="width: 18rem;" enctype="multipart/form-data">
+             <img src="{{ url_for('static', filename='images/upload/{}.jpg'.format(item.image)) }}"
+                  class="card-img-top" alt="..." style="max-height: 182px;">
+             <div class="card-body">
+                 <center><font face="Century Gothic" color="white"><h5 class="card-title">
+                     {{item.title}}
+                 </h5></font></center>
+                 <center><a href='{{"{}/{}".format(category, item.id)}}' class="btn btn-primary"
+                 style="background: yellow; border-style: solid; width: 250px;
+    text-decoration: none; color: black; border-radius: 5px; border-color: yellow; border-width: 1px;
+    font-size: 20px; font-family: century gothic; padding: 10px; bottom: 15px;
+    position: absolute; left: 15px;">Читать</a></center>
+             </div>
+            </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+{% endfor %}
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "BASED BASE.html" %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <a style="background: yellow; border-style: solid; margin-down: 100px;
+            text-decoration: none; color: black; border-radius: 5px; border-color: yellow; border-width: 1px;
+            font-size: 20px; font-family: century gothic; padding: 10px;"
+               class="btn btn-primary " href="/add_meme">Добавить мем</a>
+    {% endif %}
+<a style="float: right; background: black; border-style: solid;
+        text-decoration: none; color: white; border-radius: 5px; border-color: yellow; border-width: 1px;
+        font-size: 20px; font-family: century gothic; padding: 10px; margin-right: 10px"
+       class="btn btn-primary " href="/">
+        Назад
+    </a>
+<div class="row">
+    <div class="column" style="margin-right: 100px; margin-left: 50px">
+
+        <div class="card" style="width: 23rem; height: 24rem;" enctype="multipart/form-data">
+             <img src="{{ url_for('static', filename='images/68esjoi4sja-—-kopija.jpg') }}"
+                  class="card-img-top" alt="..." style="max-height: 300px;">
+             <div class="card-body">
+                 <center><font face="Century Gothic" color="white"><h5 class="card-title">
+                     Пикчи
+                 </h5></font></center>
+                 <center><a href='/library/pictures' class="btn btn-primary"
+                 style="background: yellow; border-style: solid; width: 200px;
+    text-decoration: none; color: black; border-radius: 5px; border-color: yellow; border-width: 1px;
+    font-size: 20px; font-family: century gothic; padding: 10px; bottom: 15px;
+    position: absolute; left: 85px;">Перейти</a></center>
+             </div>
+            </div>
+    </div>
+        <div class="column" style="margin-right: 100px">
+        <div class="card" style="width: 23rem;height: 24rem;" enctype="multipart/form-data">
+             <img src="{{ url_for('static', filename='images/Шлёпа.jpg') }}"
+                  class="card-img-top" alt="..." style="max-height: 300px;">
+             <div class="card-body">
+                 <center><font face="Century Gothic" color="white"><h5 class="card-title">
+                     Шаблонные
+                 </h5></font></center>
+                 <center><a href='/library/formulaics' class="btn btn-primary"
+                 style="background: yellow; border-style: solid; width: 200px;
+    text-decoration: none; color: black; border-radius: 5px; border-color: yellow; border-width: 1px;
+    font-size: 20px; font-family: century gothic; padding: 10px; bottom: 15px;
+    position: absolute; left: 83px;">Перейти</a></center>
+             </div>
+            </div>
+        </div>
+            <div class="column" style="margin-right: 100px">
+        <div class="card" style="width: 23rem;height: 24rem;" enctype="multipart/form-data">
+             <img src="{{ url_for('static', filename='images/C4JhjhxxdzWwa79pgae1UyrF1.jpg') }}"
+                  class="card-img-top" alt="..." style="max-height: 269px;">
+             <div class="card-body">
+                 <center><font face="Century Gothic" color="white"><h5 class="card-title">
+                     Смежные
+                 </h5></font></center>
+                 <center><a href='/library/adjacents' class="btn btn-primary"
+                 style="background: yellow; border-style: solid; width: 200px;
+    text-decoration: none; color: black; border-radius: 5px; border-color: yellow; border-width: 1px;
+    font-size: 20px; font-family: century gothic; padding: 10px; bottom: 15px;
+    position: absolute; left: 79px;">Перейти</a></center>
+             </div>
+            </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

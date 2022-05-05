@@ -1,0 +1,23 @@
+{% extends "BASED BASE.html" %}
+
+{% block content %}
+    {% if memes.typpe == ru_categ %}
+    <a style="background: black; border-style: solid;
+        text-decoration: none; color: white; border-radius: 5px; border-color: yellow; border-width: 1px;
+        font-size: 20px; font-family: century gothic; padding: 10px; margin-right: 10px"
+       class="btn btn-primary " href="/library/{{ category }}">
+        Назад
+    </a>
+    <font face="Century Gothic" color="white">
+        <b><h2>{{memes.title}}</h2></b></font>
+        <h4 style="margin-top: 20px"> Тип: {{ru_categ}} </h4>
+        <h4 style="margin-top: 20px"> Класс: {{cls}} </h4>
+        <h4 style="margin-top: 20px"> Описание: </h4>
+        <div>
+            {{memes.content}}
+        </div>
+        <img src="{{ url_for('static', filename='images/upload/{}.jpg'.format(memes.image)) }}" alt="{{ memes.title }}"
+        style="max-width: 646px">
+    {% endif %}
+
+{% endblock %}
